@@ -20,7 +20,7 @@ public class JResortCalculator extends JFrame implements ItemListener{
         JCheckBox statBox = new JCheckBox("Statistics" +"("+MEDIUM+")", false);
         JCheckBox hisBox = new JCheckBox("Ap Euro His" +"("+HARD+")", false);
         JCheckBox precalcBox = new JCheckBox("Pre-calculus" +"("+HARD+")", false);
-        JCheckBox ahisBox = new JCheckBox("Pre-calculus" +"("+HARD+")", false);
+        JCheckBox ahisBox = new JCheckBox("Art History" +"("+HARD+")", false);
         JCheckBox bioBox = new JCheckBox("Calculus" +"("+HARD+")", false);
         JCheckBox calcBox = new JCheckBox("Biology" +"("+HARD+")", false);
         //text
