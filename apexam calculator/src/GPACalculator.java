@@ -41,25 +41,34 @@ public class GPACalculator extends JFrame
             addButton = new JButton("Add Class"); //add
             abHandler = new AddButtonHandler();
             addButton.addActionListener(abHandler);
-
+            
+            //GPA button
             gpaButton = new JButton("Click to find out GPA"); //final result
             cbHandler = new GPAButtonHandler();
             gpaButton.addActionListener(cbHandler);
-
+            
+            
+            //Reset button
             resetButton = new JButton("Reset"); //reset
             rbHandler = new ResetButtonHandler();
             resetButton.addActionListener(rbHandler);
-
+            
+            //Exit button
             exitButton = new JButton("Exit"); //exit
             ebHandler = new ExitButtonHandler();
             exitButton.addActionListener(ebHandler);
 
+
+            //Title of the winndow
             setTitle("GPA Calculator");
 
+            //Container
             Container pane = getContentPane();
-
+            
+            //Layout
             pane.setLayout(new GridLayout(3, 3));
 
+            
             pane.add(gradeL); //adding the buttons to the panel
             pane.add(gradeTF);
             pane.add(addButton);
@@ -70,7 +79,7 @@ public class GPACalculator extends JFrame
             pane.add(resetButton);
             pane.add(exitButton);
 
-            //print
+            //Set size of the window
             setSize(WIDTH, HEIGHT);
             setVisible(true);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -83,7 +92,7 @@ public class GPACalculator extends JFrame
             {
                 if (gradeTF.getText().equals("") && semestersTF.getText().equals(""))
                 {
-                    noEntryMsg(); //if no entry, it show user a message
+                    noEntryMsg(); //if no entry, it shows user this message
                 }
                 else
                 {
@@ -101,7 +110,7 @@ public class GPACalculator extends JFrame
                                 JOptionPane.ERROR_MESSAGE);
                     }
                     double points = 0.0;
-
+                    //Caclulating grade point average based on entries of letter grades and semesters
                     try{ //checks if user's input was a grade from the list
                         switch (grade) {
                             case "a+" : points = semesters * 4.30; break;
@@ -131,7 +140,7 @@ public class GPACalculator extends JFrame
                     gradePoints += points; //total number from previous calculations
 
                     gradeTF.setText("");
-                    semestersTF.setText("");
+                    semestersTF.setText(""); //reset to empty 
                 }
             }
         }
@@ -178,7 +187,7 @@ public class GPACalculator extends JFrame
                 else
                 {
 
-                    totalGPA = gradePoints/totalSemesters; //calculation
+                    totalGPA = gradePoints/totalSemesters; //calculation of the average based on total
 
                     DecimalFormat df = new DecimalFormat("0.000");
 
